@@ -83,6 +83,7 @@ This is a simple manifest file which contain 1 deployment and 1 service manifest
 
 Instance type : t2.medium (cpu= 2 core, ram= 4gb for kubernetes cluster minimum requirements)
 Provision an Amazon EC2 instance on AWS to host both the Kubernetes cluster and Jenkins. Ensure that you select appropriate instance specifications to meet your project requirements.
+<img width="482" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/63138d42-ecf6-4ce5-809c-4ac3c77a3da8">
 
 ### Step 5: Set Up Kubernetes Cluster
 
