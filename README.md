@@ -119,13 +119,15 @@ After that I setup 2 credentials :
 
 ### Step 6: Write Jenkins Pipeline
 
-Craft a Jenkins pipeline script that outlines the deployment process. Your pipeline should include stages for checking out code from the GitHub repository, building Docker images, pushing images to a Docker registry, and deploying the application to the Kubernetes cluster.
+Craft a Jenkins pipeline script that outlines the deployment process. Your pipeline should include stages for checking out code from the GitHub repository, building Docker images, pushing images to a Docker registry, and deploying the application to the Kubernetes cluster. The pipeline I use is in the jenkins folder of this repository .
 ![Screenshot (11)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/1dc9a772-8157-4464-a1cc-617cdb98bd93)
 
 
 ### Step 7: Set Up GitHub Webhook
 
 Configure a webhook in your GitHub repository settings to trigger the Jenkins pipeline automatically whenever new code changes are pushed to the repository. This integration ensures that your deployment process remains responsive to code updates.
+                   <img width="190" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/cd9c5c7b-67de-4f74-ad64-6d0d0ff2078c">
+
 
 ### Step 8: Implement GitHub Actions for Testing
 
