@@ -244,6 +244,8 @@ pipeline {
 }
 ```
 
+Enter this pipeline into jenkins by crating a new pipeline and paste it into the pipeline script section .
+
 ![Screenshot (11)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/1dc9a772-8157-4464-a1cc-617cdb98bd93)
 
 
