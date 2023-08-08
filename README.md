@@ -107,7 +107,9 @@ Configure Jenkins by installing the necessary plugins that facilitate integratio
 I install 2 plugins : 
 1. Docker Pipeline
 2. Kubernetes Deployment 1.0 (this is not available in jenkins , i use it by downloading it Here is the link for download : [click here](https://mirrors.tuna.tsinghua.edu.cn/jenkins/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi) 
-                          
+ <img width="719" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/4ec595a7-4233-433e-af27-af449c68a2bd">
+ <img width="712" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/948bc4a3-dc98-42e5-8d74-7f9335e2d0dc">
+  
 
 After that I setup 2 credentials :
 1. DockerHub Credential
