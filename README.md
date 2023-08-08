@@ -183,6 +183,11 @@ After that I setup 2 credentials :
 1. DockerHub Credential
 2. Kubernetes Credential
 
+In kubernetes credential setup we need to copy the config file from .kube folder and paste it in the credential section .
+![Screenshot (3)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/0db29a21-4572-458c-8e25-82af760edc17)
+
+After setting up both credentials we can see those in xthis section
+
 ![image](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/ffe1962b-2d3e-4ed1-a0d9-b70cf29f3ebf)
 
 ### Step 8: Write Jenkins Pipeline
