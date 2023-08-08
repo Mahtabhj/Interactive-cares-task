@@ -104,13 +104,13 @@ Run Jenkins within a Docker container on the EC2 instance. This approach isolate
 
 Configure Jenkins by installing the necessary plugins that facilitate integration with GitHub, Docker, and Kubernetes. These plugins empower Jenkins to communicate with each stage of your deployment pipeline effectively.
 
-I install 2 plugins : 
+####I install 2 plugins : 
 
                           1. Docker Pipeline
                           2. Kubernetes Deployment 1.0 (this is not available in jenkins , i use it by downloading it Here is the link for download : [click here](https://mirrors.tuna.tsinghua.edu.cn/jenkins/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi) 
                           
 
-After that I setup 2 credentials :
+####After that I setup 2 credentials :
                                    1. DockerHub Credentials
                                    2. Kubernetes Credentials
 ![image](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/ffe1962b-2d3e-4ed1-a0d9-b70cf29f3ebf)
