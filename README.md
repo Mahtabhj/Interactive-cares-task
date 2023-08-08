@@ -86,6 +86,7 @@ kubectl get nodes
 If any problem occurs then run 
 ```cmd
 sudo kubeadm reset
+sudo kubeadm init
 ```
 
 ![Screenshot (10)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/3f2c0837-e3d5-4b41-90b9-ad6a26cace8e)
