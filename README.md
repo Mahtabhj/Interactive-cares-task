@@ -194,6 +194,7 @@ Craft a Jenkins pipeline script that outlines the deployment process. Your pipel
 ### Step 9: Set Up GitHub Webhook
 
 Configure a webhook in your GitHub repository settings to trigger the Jenkins pipeline automatically whenever new code changes are pushed to the repository. This integration ensures that your deployment process remains responsive to code updates.
+
 <img width="311" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/e7011320-1a07-47c8-abed-ea07248e2f77">
 
 
