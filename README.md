@@ -11,7 +11,8 @@ Modern software development practices emphasize automation, continuous integrati
 ### Step 1: Create a Sample Node.js App
 
 Begin by creating a simple Node.js application that will serve as the target application for deployment. This application can be as basic as a "Hello World" example or a more intricate application depending on your needs.
-## Step 2: Writing a Dockerfile
+
+### Step 2: Writing a Dockerfile
 
 To containerize my Node.js app, I need to create a Docker image using the following steps:
 
@@ -32,13 +33,58 @@ COPY . .
 
 EXPOSE 3000
 CMD [ "node", "app.js" ]
+```
 
-### Step 2: Create an EC2 Instance in AWS
+## Step 3: Writing kubernetes manifest
+
+To deploy the Node.js app using Kubernetes, i use this manifest file :
+
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp-deployment
+  labels:
+    app: nodeapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeapp
+  template:
+    metadata:
+      labels:
+        app: nodeapp 
+    spec:
+      containers:
+      - name: nodeserver
+        image: mahtabhj/newimage1:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeapp-service
+spec:
+  selector:
+    app: nodeapp 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 3000
+    nodePort: 31110
+```
+This is a simple manifest file which contain 1 deployment and 1 service manifest
+
+### Step 4: Create an EC2 Instance in AWS
 
 Instance type : t2.medium (cpu= 2 core, ram= 4gb for kubernetes cluster minimum requirements)
 Provision an Amazon EC2 instance on AWS to host both the Kubernetes cluster and Jenkins. Ensure that you select appropriate instance specifications to meet your project requirements.
 
-### Step 3: Set Up Kubernetes Cluster
+### Step 5: Set Up Kubernetes Cluster
 
 Install and configure Kubernetes on the EC2 instance. Utilize tools such as `kubeadm` to establish a functional Kubernetes cluster. Make sure to allocate appropriate resources to each Kubernetes component.
 Procedure to set up kubernetes into EC2 : 
@@ -113,7 +159,7 @@ sudo kubeadm init
 ![Screenshot (10)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/3f2c0837-e3d5-4b41-90b9-ad6a26cace8e)
 
 
-### Step 4: Run Jenkins as a Docker Container
+### Step 6: Run Jenkins as a Docker Container
 
 Run Jenkins within a Docker container on the EC2 instance. This approach isolates Jenkins, facilitating its management and minimizing conflicts with other software components.
 
@@ -121,7 +167,7 @@ Run Jenkins within a Docker container on the EC2 instance. This approach isolate
  docker run -p 8080:8080 -p 50000:50000 -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 ```
 
-### Step 5: Configure Jenkins
+### Step 7: Configure Jenkins
 
 Configure Jenkins by installing the necessary plugins that facilitate integration with GitHub, Docker, and Kubernetes. These plugins empower Jenkins to communicate with each stage of your deployment pipeline effectively.
 
@@ -138,19 +184,19 @@ After that I setup 2 credentials :
 
 ![image](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/ffe1962b-2d3e-4ed1-a0d9-b70cf29f3ebf)
 
-### Step 6: Write Jenkins Pipeline
+### Step 8: Write Jenkins Pipeline
 
 Craft a Jenkins pipeline script that outlines the deployment process. Your pipeline should include stages for checking out code from the GitHub repository, building Docker images, pushing images to a Docker registry, and deploying the application to the Kubernetes cluster. The pipeline I use is in the jenkins folder of this repository .
 ![Screenshot (11)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/1dc9a772-8157-4464-a1cc-617cdb98bd93)
 
 
-### Step 7: Set Up GitHub Webhook
+### Step 9: Set Up GitHub Webhook
 
 Configure a webhook in your GitHub repository settings to trigger the Jenkins pipeline automatically whenever new code changes are pushed to the repository. This integration ensures that your deployment process remains responsive to code updates.
                    <img width="190" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/cd9c5c7b-67de-4f74-ad64-6d0d0ff2078c">
 
 
-### Step 8: Implement GitHub Actions for Testing
+### Step 10: Implement GitHub Actions for Testing
 
 Create a GitHub Actions workflow that runs unit tests on each push to the repository. This workflow ensures that the code changes do not break existing functionality and maintains the code's quality. I use a sample unit test. When a push occurs in this repo the workflow will trigger and run that unit test .
 <img width="323" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/7472e5a6-0878-4033-b297-9c3eae7588d6">
