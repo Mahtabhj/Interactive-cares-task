@@ -196,7 +196,6 @@ Craft a Jenkins pipeline script that outlines the deployment process. Your pipel
 Configure a webhook in your GitHub repository settings to trigger the Jenkins pipeline automatically whenever new code changes are pushed to the repository. This integration ensures that your deployment process remains responsive to code updates.
 <img width="190" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/cd9c5c7b-67de-4f74-ad64-6d0d0ff2078c">
 
-
 ### Step 10: Implement GitHub Actions for Testing
 
 Create a GitHub Actions workflow that runs unit tests on each push to the repository. This workflow ensures that the code changes do not break existing functionality and maintains the code's quality. I use a sample unit test. When a push occurs in this repo the workflow will trigger and run that unit test .
