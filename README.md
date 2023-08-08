@@ -202,7 +202,7 @@ Configure a webhook in your GitHub repository settings to trigger the Jenkins pi
 
 Create a GitHub Actions workflow that runs unit tests on each push to the repository. This workflow ensures that the code changes do not break existing functionality and maintains the code's quality. I use a sample unit test. When a push occurs in this repo the workflow will trigger and run that unit test .
 
-<img width="323" alt="Screenshot 2023-08-08 222538" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/71f704c0-9252-4456-8181-bbc9982ca5da">
+<img width="500" alt="Screenshot 2023-08-08 222538" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/71f704c0-9252-4456-8181-bbc9982ca5da">
 
 
 
