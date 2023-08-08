@@ -4,7 +4,7 @@ This project demonstrates the process of setting up a Kubernetes cluster with Je
 
 ## Project Overview
 
-Modern software development practices emphasize automation, continuous integration, and deployment to streamline the development lifecycle. This project showcases a practical implementation of these principles by integrating Kubernetes, Jenkins, and GitHub in a cohesive DevOps pipeline.
+Modern software development practices emphasize automation, continuous integration, and deployment to streamline the development lifecycle. This project showcases a practical implementation of these principles by integrating Kubernetes, Jenkins, GitHub Actions, and GitHub in a cohesive DevOps pipeline.
 
 ## Project Steps
 
@@ -14,11 +14,14 @@ Begin by creating a simple Node.js application that will serve as the target app
 
 ### Step 2: Create an EC2 Instance in AWS
 
+Instance type : t2.medium (cpu= 2 core, ram= 4gb for kubernetes cluster minimum requirements)
 Provision an Amazon EC2 instance on AWS to host both the Kubernetes cluster and Jenkins. Ensure that you select appropriate instance specifications to meet your project requirements.
 
 ### Step 3: Set Up Kubernetes Cluster
 
 Install and configure Kubernetes on the EC2 instance. Utilize tools such as `kubeadm` to establish a functional Kubernetes cluster. Make sure to allocate appropriate resources to each Kubernetes component.
+
+![Screenshot (10)](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/48a54bf9-d03e-486e-95e2-25df8ce58fa8)
 
 ### Step 4: Run Jenkins as a Docker Container
 
@@ -36,9 +39,14 @@ Craft a Jenkins pipeline script that outlines the deployment process. Your pipel
 
 Configure a webhook in your GitHub repository settings to trigger the Jenkins pipeline automatically whenever new code changes are pushed to the repository. This integration ensures that your deployment process remains responsive to code updates.
 
+### Step 8: Implement GitHub Actions for Testing
+
+Create a GitHub Actions workflow that runs unit tests on each push to the repository. This workflow ensures that the code changes do not break existing functionality and maintains the code's quality.
+
 ## How to Use This Repository
 
 1. Clone the repository to your local machine:
 
    ```bash
    git clone https://github.com/YourUsername/YourRepoName.git
+
