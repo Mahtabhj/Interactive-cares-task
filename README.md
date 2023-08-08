@@ -11,6 +11,27 @@ Modern software development practices emphasize automation, continuous integrati
 ### Step 1: Create a Sample Node.js App
 
 Begin by creating a simple Node.js application that will serve as the target application for deployment. This application can be as basic as a "Hello World" example or a more intricate application depending on your needs.
+## Step 2: Writing a Dockerfile
+
+To containerize my Node.js app, I need to create a Docker image using the following steps:
+
+1. Create a file named `Dockerfile` (without any file extension) in the root directory of my project.
+
+2. Add the following content to the `Dockerfile`:
+
+```Dockerfile
+FROM node:latest
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD [ "node", "app.js" ]
 
 ### Step 2: Create an EC2 Instance in AWS
 
@@ -132,6 +153,7 @@ Configure a webhook in your GitHub repository settings to trigger the Jenkins pi
 ### Step 8: Implement GitHub Actions for Testing
 
 Create a GitHub Actions workflow that runs unit tests on each push to the repository. This workflow ensures that the code changes do not break existing functionality and maintains the code's quality. I use a sample unit test. When a push occurs in this repo the workflow will trigger and run that unit test .
+<img width="323" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/7472e5a6-0878-4033-b297-9c3eae7588d6">
 
 
 
