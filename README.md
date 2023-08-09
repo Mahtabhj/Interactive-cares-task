@@ -278,6 +278,9 @@ Configure a webhook in your GitHub repository settings to trigger the Jenkins pi
 
 <img width="311" alt="image" src="https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/e7011320-1a07-47c8-abed-ea07248e2f77">
 
+After pushing something into this git repo the pipeline runs and deploy this app using kubernetes . 
+![sdsdasad](https://github.com/Mahtabhj/Interactive-cares-task/assets/48786676/9746c50b-18a3-4aa1-9a4c-412fb68e8fd1)
+
 
 ### Step 10: Implement GitHub Actions for Testing
 
