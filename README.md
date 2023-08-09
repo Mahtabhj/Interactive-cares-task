@@ -175,6 +175,7 @@ Copy the container-id of that jenkins container :
 ```cmd
  docker logs -f <container-id>
 ```
+From that log we can see a long password is generated to login into jenkins . We use this password to login first time .
 I face some error when run my pipeline for docker version matching . For safety we use this steps : 
 1. Enter the jenkins container as root user:
   ```cmd
