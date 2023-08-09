@@ -167,6 +167,28 @@ Run Jenkins within a Docker container on the EC2 instance. This approach isolate
 ```cmd
  docker run -p 8080:8080 -p 50000:50000 -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 ```
+After running this we can see a container is created and start from Jenkins image . To see the logs : 
+```cmd
+ docker ps
+```
+Copy the container-id of that jenkins container : 
+```cmd
+ docker logs -f <container-id>
+```
+I face some error when run my pipeline for docker version matching . For safety we use this steps : 
+1. Enter the jenkins container as root user:
+  ```cmd
+ docker exec -it -u0 <container id> bash
+```
+2. Install docker:
+ ```cmd
+ curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
+```
+3. And then exit the Jenkins container and change docker.sock privilege to read and write for all users with:
+ ```cmd
+ sudo chmod 666 /var/run/docker.sock
+```
+
 
 ### Step 7: Configure Jenkins
 
